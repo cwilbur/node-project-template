@@ -1,11 +1,10 @@
 {
-  "source": [
+  "source_js": [
     "app.js",
     "lib/**/*.js",
     "config/**/*.js",
-    "config/**/*.json",
     "public/**/*.js",
-    "templates/**/*.jade"
+    "scripts/**/*.js"
   ],
   "tests": [
     "spec/**/*.spec.js"
@@ -18,10 +17,10 @@
     "app.js",
     "lib/**/*.js",
     "spec/**/*.spec.js",
-    "templates/**/*.jade",
     "config/**/*.js",
     "config/**/*.json",
     "public/**/*.js",
+    "scripts/**/*.js",
     "templates/**/*.jade"
   ],
   "source_json": [
