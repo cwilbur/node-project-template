@@ -6,15 +6,9 @@
     "public/**/*.js",
     "scripts/**/*.js"
   ],
-  "code": [
-    "lib/**/*.js"
-  ],
-  "tests": [
-    "spec/**/*.spec.js"
-  ],
-  "modules": [
-    "node_modules/**/*.js"
-  ],
+  "code": "lib/**/*.js",
+  "tests": "spec/**/*.spec.js",
+  "libraries": "node_modules/**/*.spec.js",
   "other": [
     "Gruntfile.js",
     "grunt/*.js"

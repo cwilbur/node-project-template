@@ -47,8 +47,9 @@ module.exports = function(grunt, options) {
   // unspeakably asynchronous hackish things with grunt.
   if (grunt.task.exists('jshint')) {
 
-    grunt.renameTask('jshint', 'jshint-actual');
+    // dynamically update our jshint configuration
 
+    grunt.renameTask('jshint', 'jshint-actual');
     grunt.registerTask('jshint',
       'Update the jshint config based on package.json and .jshintrc files',
       function() {
