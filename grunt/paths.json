@@ -6,6 +6,9 @@
     "public/**/*.js",
     "scripts/**/*.js"
   ],
+  "code": [
+    "lib/**/*.js"
+  ],
   "tests": [
     "spec/**/*.spec.js"
   ],
