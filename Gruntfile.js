@@ -8,9 +8,11 @@ var path = require('path');
 var fs = require('fs');
 var util = require('util');
 
-module.exports = function(grunt) {
+module.exports = function(grunt, options) {
 
-  require('time-grunt')(grunt);
+  if (grunt.option('t') || grunt.option('time')) {
+    require('time-grunt')(grunt);
+  }
   require('load-grunt-config')(grunt);
 
   if (grunt.task.exists('jshint')) {
