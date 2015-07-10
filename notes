@@ -1,0 +1,6 @@
+notes:
+
+use json-mock to mock a rest server
+
+obfuscating cards: ranks take 4 bits (16 > 13), suits take 2 bits exactly.  pick 6 bits of an 8-bit number, or of a 16-bit number, and let the other bits be random.  (each card represented as 0x0000-0xFFFF, pattern difficult for people to see)
+
