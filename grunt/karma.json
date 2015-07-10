@@ -1,44 +1,76 @@
 {
   "options": {
-    "basePath": "",
-    "plugins": ["karma-commonjs", "karma-jasmine", "karma-chrome-launcher", "karma-phantomjs-launcher"],
-    "frameworks": ["jasmine", "commonjs"],
-    "files": [
-      "spec/**/*.spec.js",
-      "lib/**/*.js"
+
+    "frameworks": ["jasmine", "browserify"],
+
+    "browsers": ["PhantomJS", "Chrome"],
+
+    "plugins": [
+      "karma-browserify",
+      "karma-jasmine",
+      "karma-chrome-launcher",
+      "karma-phantomjs-launcher",
+      "karma-coverage",
+      "karma-spec-reporter",
+      "karma-quiet-reporter"
     ],
+
+    "reporters": [
+      "progress",
+      "spec",
+      "quiet",
+      "coverage"
+    ],
+
+    "basePath": ".",
+
+    "files": [
+      "<%= paths.tests %>"
+    ],
+
     "exclude": [],
+
     "preprocessors": {
-      "!(node_modules)*/**/*.js": ["commonjs"]
+      "spec/**/*.spec.js": ["browserify"]
     },
-    "reporters": ["progress"],
+
+    "browserify": {
+      "debug": true,
+      "transform": ["brfs"]
+    },
+
     "port": 9876,
     "colors": true,
     "autoWatch": true,
-    "browsers": ["PhantomJS", "Chrome"],
-    "logLevel": "INFO",
+    "logLevel": "WARN",
     "singleRun": false
   },
+
   "continuously": {
     "browsers": ["PhantomJS", "Chrome"],
     "autoWatch": true,
     "background": false,
     "singleRun": false
   },
+
   "background": {
     "browsers": ["PhantomJS", "Chrome"],
     "autoWatch": true,
     "background": true,
     "singleRun": false
   },
+
   "once": {
     "browsers": ["PhantomJS"],
+    "reporters": "spec",
     "autoWatch": false,
     "background": false,
     "singleRun": true
   },
+
   "sublime_text": {
     "browsers": ["PhantomJS"],
+    "reporters": "quiet",
     "autoWatch": false,
     "background": false,
     "singleRun": true,

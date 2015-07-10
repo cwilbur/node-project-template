@@ -27,12 +27,16 @@
     "karma": "^0.12.37",
     "karma-chrome-launcher": "^0.2.0",
     "karma-commonjs": "0.0.13",
+    "karma-coverage": "^0.4.2",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.0",
+    "karma-quiet-reporter": "^0.1.2",
+    "karma-spec-reporter": "0.0.19",
     "load-grunt-config": "^0.17.1",
     "mocha": "^2.2.5",
     "phantomjs": "^1.9.17",
     "sinon": "^1.15.4",
+    "source-map-support": "^0.3.2",
     "time-grunt": "^1.2.1"
   },
   "engines": {

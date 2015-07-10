@@ -1,3 +1,6 @@
+# generated from grunt config, so don't keep
+karma-grunt.conf.js
+
 # secrets that don't belong on github
 secrets.json
 
@@ -38,9 +41,10 @@ thumbs.db
 *.iml
 
 # Folders to ignore
-.hg
-.svn
-.CVS
-.idea
+.hg/
+.svn/
+.CVS/
+.idea/
 node_modules/
 jscoverage_lib/
+coverage/
