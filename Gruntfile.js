@@ -15,11 +15,40 @@ module.exports = function(grunt, options) {
   }
   require('load-grunt-config')(grunt);
 
+  // since the gruntfile is the authoritative source,
+  // we need to allow for people not using grunt
+  grunt.registerTask('writeKarmaConf', function() {
+
+    var karmaConfig = grunt.config.get('karma.options');
+
+    if (karmaConfig) {
+      var data = util.inspect(karmaConfig);
+
+      var replaceLogLine = data.match(/logLevel:\s+'([A-Z]+)'(,?)/);
+      if (replaceLogLine) {
+        var logLine = replaceLogLine[0];
+        var logValue = replaceLogLine[1];
+        var finalComma = replaceLogLine[2];
+        var replacementLine = 'logLevel: config.LOG_' + logValue + finalComma;
+        data.replace(logLine, replacementLine);
+      }
+
+      data = 'module.exports = function(config) {\n' +
+        '  config.set(' + data +
+        ');\n' +
+        '};';
+
+      grunt.file.write('karma-grunt.conf.js', data);
+    }
+  });
+
+  // if the user has a .jshintrc file in a recognized place,
+  // we'd be boors to ignore it -- plus we get to do
+  // unspeakably asynchronous hackish things with grunt.
   if (grunt.task.exists('jshint')) {
 
-    // dynamically update our jshint configuration
-
     grunt.renameTask('jshint', 'jshint-actual');
+
     grunt.registerTask('jshint',
       'Update the jshint config based on package.json and .jshintrc files',
       function() {

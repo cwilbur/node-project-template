@@ -11,8 +11,9 @@
   "license": "BSD-3-Clause",
   "dependencies": {},
   "devDependencies": {
-    "chai": "^3.0.0",
+    "brfs": "^1.4.0",
     "grunt": "^0.4.5",
+    "grunt-browserify": "^3.8.0",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-jshint": "^0.11.2",
     "grunt-jasmine-nodejs": "^1.4.0",
@@ -25,14 +26,12 @@
     "grunt-open": "^0.2.3",
     "jasmine-core": "^2.3.4",
     "karma": "^0.12.37",
+    "karma-browserify": "^4.2.1",
     "karma-chrome-launcher": "^0.2.0",
-    "karma-commonjs": "0.0.13",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.0",
     "load-grunt-config": "^0.17.1",
-    "mocha": "^2.2.5",
     "phantomjs": "^1.9.17",
-    "sinon": "^1.15.4",
     "time-grunt": "^1.2.1"
   },
   "engines": {

@@ -12,6 +12,9 @@
   "tests": [
     "spec/**/*.spec.js"
   ],
+  "modules": [
+    "node_modules/**/*.js"
+  ],
   "other": [
     "Gruntfile.js",
     "grunt/*.js"
